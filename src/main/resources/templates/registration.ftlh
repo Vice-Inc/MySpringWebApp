@@ -5,7 +5,7 @@
 
     <h3>Registration Page</h3>
 
-    ${message!" "}
+    ${message?ifExists}
 
     <@l.login "/registration" "Create account"/>
 
