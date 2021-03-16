@@ -85,8 +85,8 @@ false Africa/Timbuktu
 false Africa/Tripoli
 false Africa/Tunis
 false Africa/Windhoek
-false America/Adak
-false America/Anchorage
+true America/Adak
+true America/Anchorage
 false America/Anguilla
 false America/Antigua
 false America/Araguaina
@@ -106,7 +106,7 @@ false America/Argentina/Ushuaia
 false America/Aruba
 true America/Asuncion
 false America/Atikokan
-false America/Atka
+true America/Atka
 false America/Bahia
 false America/Bahia_Banderas
 false America/Barbados
@@ -170,7 +170,7 @@ true America/Inuvik
 true America/Iqaluit
 false America/Jamaica
 false America/Jujuy
-false America/Juneau
+true America/Juneau
 true America/Kentucky/Louisville
 true America/Kentucky/Monticello
 true America/Knox_IN
@@ -190,7 +190,7 @@ false America/Mazatlan
 false America/Mendoza
 true America/Menominee
 false America/Merida
-false America/Metlakatla
+true America/Metlakatla
 false America/Mexico_City
 true America/Miquelon
 true America/Moncton
@@ -201,7 +201,7 @@ false America/Montserrat
 true America/Nassau
 true America/New_York
 true America/Nipigon
-false America/Nome
+true America/Nome
 false America/Noronha
 true America/North_Dakota/Beulah
 true America/North_Dakota/Center
@@ -232,7 +232,7 @@ false America/Santo_Domingo
 false America/Sao_Paulo
 false America/Scoresbysund
 true America/Shiprock
-false America/Sitka
+true America/Sitka
 false America/St_Barthelemy
 true America/St_Johns
 false America/St_Kitts
@@ -250,7 +250,7 @@ true America/Vancouver
 false America/Virgin
 false America/Whitehorse
 true America/Winnipeg
-false America/Yakutat
+true America/Yakutat
 true America/Yellowknife
 false Antarctica/Casey
 false Antarctica/Davis
@@ -740,8 +740,8 @@ false Turkey
 false UCT
 true ULAST
 false ULAT
-false US/Alaska
-false US/Aleutian
+true US/Alaska
+true US/Aleutian
 false US/Arizona
 true US/Central
 true US/East-Indiana
@@ -798,7 +798,7 @@ false Zulu
     <database id="4" parent="1" name="sweater">
       <ObjectId>16401</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>518</IntrospectionStateNumber>
+      <IntrospectionStateNumber>571</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="5" parent="1" name="pg_execute_server_program">
@@ -869,7 +869,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>519</IntrospectionStateNumber>
+      <IntrospectionStateNumber>572</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="19" parent="4" name="plpgsql">
@@ -970,48 +970,60 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="31" parent="18" name="hibernate_sequence">
-      <ObjectId>16410</ObjectId>
+      <ObjectId>24581</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>501</StateNumber>
+      <StateNumber>565</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="32" parent="18" name="message">
-      <ObjectId>16402</ObjectId>
+      <ObjectId>24583</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>500</StateNumber>
+      <StateNumber>569</StateNumber>
     </table>
     <table id="33" parent="18" name="user_role">
-      <ObjectId>16412</ObjectId>
+      <ObjectId>24591</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>511</StateNumber>
+      <StateNumber>570</StateNumber>
     </table>
     <table id="34" parent="18" name="usr">
-      <ObjectId>16415</ObjectId>
+      <ObjectId>24594</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>511</StateNumber>
+      <StateNumber>569</StateNumber>
     </table>
     <column id="35" parent="32" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>500</StateNumber>
+      <StateNumber>566</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="36" parent="32" name="tag">
+    <column id="36" parent="32" name="filename">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>500</StateNumber>
+      <StateNumber>566</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="37" parent="32" name="text">
+    <column id="37" parent="32" name="tag">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>500</StateNumber>
+      <StateNumber>566</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="38" parent="32" name="message_pkey">
-      <ObjectId>16408</ObjectId>
-      <StateNumber>500</StateNumber>
+    <column id="38" parent="32" name="text">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>566</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="39" parent="32" name="user_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>566</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="40" parent="32" name="message_pkey">
+      <ObjectId>24589</ObjectId>
+      <StateNumber>566</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1019,65 +1031,87 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="39" parent="32" name="message_pkey">
-      <ObjectId>16409</ObjectId>
-      <StateNumber>500</StateNumber>
+    <key id="41" parent="32" name="message_pkey">
+      <ObjectId>24590</ObjectId>
+      <StateNumber>566</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>message_pkey</UnderlyingIndexName>
     </key>
-    <column id="40" parent="33" name="user_id">
-      <Position>1</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>509</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="41" parent="33" name="roles">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>509</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <foreign-key id="42" parent="33" name="fkfpm8swft53ulq2hl11yplpr5">
-      <ObjectId>16423</ObjectId>
-      <StateNumber>511</StateNumber>
+    <foreign-key id="42" parent="32" name="fk70bv6o4exfe3fbrho7nuotopf">
+      <ObjectId>24602</ObjectId>
+      <StateNumber>569</StateNumber>
       <ColNames>user_id</ColNames>
-      <RefTableId>16415</RefTableId>
+      <RefTableId>24594</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>usr</RefTableName>
       <RefKeyName>usr_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="43" parent="34" name="id">
+    <column id="43" parent="33" name="user_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>510</StateNumber>
+      <StateNumber>567</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="44" parent="34" name="active">
+    <column id="44" parent="33" name="roles">
       <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>567</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <foreign-key id="45" parent="33" name="fkfpm8swft53ulq2hl11yplpr5">
+      <ObjectId>24607</ObjectId>
+      <StateNumber>570</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>24594</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usr</RefTableName>
+      <RefKeyName>usr_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="46" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>568</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="47" parent="34" name="activation_code">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>568</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="48" parent="34" name="active">
+      <Position>3</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>510</StateNumber>
+      <StateNumber>568</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="45" parent="34" name="password">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>510</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="46" parent="34" name="username">
+    <column id="49" parent="34" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>510</StateNumber>
+      <StateNumber>568</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="47" parent="34" name="usr_pkey">
-      <ObjectId>16421</ObjectId>
-      <StateNumber>510</StateNumber>
+    <column id="50" parent="34" name="password">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>568</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="51" parent="34" name="username">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>568</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="52" parent="34" name="usr_pkey">
+      <ObjectId>24600</ObjectId>
+      <StateNumber>568</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1085,9 +1119,9 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="48" parent="34" name="usr_pkey">
-      <ObjectId>16422</ObjectId>
-      <StateNumber>510</StateNumber>
+    <key id="53" parent="34" name="usr_pkey">
+      <ObjectId>24601</ObjectId>
+      <StateNumber>568</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>usr_pkey</UnderlyingIndexName>

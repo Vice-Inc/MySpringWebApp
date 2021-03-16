@@ -42,9 +42,6 @@ public class MailConfig {
 
         properties.setProperty("mail.transport.protocol", protocol);
 
-//        properties.setProperty("mail.transport.protocol", "smtp");
-//        properties.setProperty("mail.smtp.starttls.enable", "true");
-
         return mailSender;
     }
 }
