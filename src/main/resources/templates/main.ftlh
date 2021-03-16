@@ -25,13 +25,33 @@
     <a class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         Add new Message
     </a>
-    <div class="collapse form-group" id="collapseExample">
+    <div class="collapse form-group <#if message??>show</#if>" id="collapseExample">
         <form method="post" enctype="multipart/form-data">
-            <input class="form-control mb-2" type="text" name="text" placeholder="Введите сообщение"/>
-            <input class="form-control mb-2" type="text" name="tag" placeholder="Тэг"/>
+
+            <input class="form-control mb-2 ${(textError??)?string('is-invalid', '')}"
+                   value="<#if message??>${message.text?ifExists}</#if>"
+                   type="text" name="text" placeholder="Введите сообщение"/>
+            <#if textError??>
+            <div class="invalid-feedback">
+                ${textError}
+            </div>
+            </#if>
+
+            <input class="form-control mb-2 ${(tagError??)?string('is-invalid', '')}"
+                   type="text" name="tag" placeholder="Тэг"
+                   value="<#if message??>${message.tag?ifExists}</#if>"/>
+            <#if tagError??>
+                <div class="invalid-feedback">
+                    ${tagError}
+                </div>
+            </#if>
+
             <input class="form-control mb-2" type="file" name="file">
+
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+
             <button type="submit" class="btn btn-primary">Добавить</button>
+
         </form>
     </div>
 
@@ -46,8 +66,8 @@
                     </#if>
 
                     <div class="m-2">
-                        <span>${message.text}</span>
-                        <i>${message.tag}</i>
+                        <div>${message.text}</div>
+                        <div><i>#${message.tag}</i></div>
                     </div>
 
                     <div class="card-footer text-muted">
@@ -57,7 +77,7 @@
                 </div>
             </div>
         <#else>
-            No messages
+            <div class="mt-4">No messages</div>
         </#list>
     </div>
 

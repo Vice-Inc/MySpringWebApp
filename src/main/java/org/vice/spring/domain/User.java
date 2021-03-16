@@ -1,9 +1,12 @@
 package org.vice.spring.domain;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Set;
 
@@ -15,11 +18,26 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotEmpty(message = "Username can not be empty")
+    @Length(max = 50, message = "Username too long (more than 50)")
     private String username;
+
+    @NotEmpty(message = "Password can not be empty")
+    @Length(max = 50, message = "Password too long (more than 50)")
     private String password;
+
+    @Transient
+    @NotEmpty(message = "Password confirmation can not be empty")
+    @Length(max = 50, message = "Password confirmation too long (more than 50)")
+    private String password2;
+
     private boolean active;
 
+    @NotEmpty(message = "Email can not be empty")
+    @Length(max = 255, message = "Email too long (more than 255)")
+    @Email(message = "Not valid Email")
     private String email;
+
     private String activationCode;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
@@ -110,5 +128,13 @@ public class User implements UserDetails {
 
     public void setActivationCode(String activationCode) {
         this.activationCode = activationCode;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
     }
 }

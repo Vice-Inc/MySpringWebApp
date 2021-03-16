@@ -7,6 +7,6 @@
 
     ${message?ifExists}
 
-    <@l.new_login "/registration" true/>
+    <@l.login "/registration" true/>
 
 </@c.page>

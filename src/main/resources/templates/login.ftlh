@@ -4,9 +4,13 @@
 <@c.page>
     <h3>Login Page</h3>
 
-    ${message?ifExists}
+    <#if Session?? && Session.SPRING_SECURITY_LAST_EXCEPTION??>
+        <div class="alert alert-danger" role="alert">
+            ${Session.SPRING_SECURITY_LAST_EXCEPTION.message}
+        </div>
+    </#if>
 
-    <@l.new_login "/login" false/>
+    <@l.login "/login" false/>
 
     <a href="/registration" class="btn mt-1 btn-primary">Registration</a>
 
