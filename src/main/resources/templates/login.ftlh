@@ -4,7 +4,9 @@
 <@c.page>
     <h3>Login Page</h3>
 
-    <@l.login "/login" "Sign In"/>
+    <@l.new_login "/login" "Sign In"/>
 
-    <a href="/registration">Registration</a>
+    <a href="/registration" class="btn mt-1 btn-primary">Registration</a>
+
+<#--    <a href="/registration">Registration</a>-->
 </@c.page>
