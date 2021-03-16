@@ -10,6 +10,12 @@
         </div>
     </#if>
 
+    <#if message??>
+        <div class="alert alert-${messageType}" role="alert">
+            ${message}
+        </div>
+    </#if>
+
     <@l.login "/login" false/>
 
     <a href="/registration" class="btn mt-1 btn-primary">Registration</a>

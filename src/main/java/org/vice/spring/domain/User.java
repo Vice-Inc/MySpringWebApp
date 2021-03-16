@@ -23,13 +23,8 @@ public class User implements UserDetails {
     private String username;
 
     @NotEmpty(message = "Password can not be empty")
-    @Length(max = 50, message = "Password too long (more than 50)")
+//    @Length(max = 50, message = "Password too long (more than 50)")
     private String password;
-
-    @Transient
-    @NotEmpty(message = "Password confirmation can not be empty")
-    @Length(max = 50, message = "Password confirmation too long (more than 50)")
-    private String password2;
 
     private boolean active;
 
@@ -130,11 +125,4 @@ public class User implements UserDetails {
         this.activationCode = activationCode;
     }
 
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
-    }
 }

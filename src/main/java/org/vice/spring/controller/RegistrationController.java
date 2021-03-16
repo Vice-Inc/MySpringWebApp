@@ -1,16 +1,20 @@
 package org.vice.spring.controller;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.vice.spring.domain.User;
 import org.vice.spring.service.UserService;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.Map;
 
 @Controller
@@ -25,16 +29,23 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(@Valid User user,
+    public String addUser(@RequestParam String password2,
+                          @Valid User user,
                           BindingResult bindingResult,
                           Model model){
 
+        boolean isPassword2Empty = StringUtils.isEmpty(password2);
+
+        if(isPassword2Empty){
+            model.addAttribute("password2Error", "Password confirmation can not be empty");
+        }
+
         if(user.getPassword() != null
-                && !user.getPassword().equals(user.getPassword2())){
+                && !user.getPassword().equals(password2)){
             model.addAttribute("passwordError", "Passwords are different!");
         }
 
-        if(bindingResult.hasErrors()) {
+        if(isPassword2Empty || bindingResult.hasErrors()) {
             model.mergeAttributes(ControllerUtils.getErrors(bindingResult));
             return "registration";
         }
@@ -51,8 +62,10 @@ public class RegistrationController {
     public String activate(@PathVariable String code,
                            Model model){
         if(userService.activateUser(code)){
+            model.addAttribute("messageType", "success");
             model.addAttribute("message", "User activated");
         }else{
+            model.addAttribute("messageType", "danger");
             model.addAttribute("message", "User not activated");
         }
 
