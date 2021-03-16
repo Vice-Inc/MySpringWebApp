@@ -7,18 +7,32 @@
 </form>
 </#macro>
 
-<#macro new_login path button_text>
+<#macro new_login path isRegisterForm>
     <form  action="${path}" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Username">
         </div>
+        <#if isRegisterForm>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+        </div>
+        </#if>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">${button_text}</button>
+
+        <#if isRegisterForm>
+            <button type="submit" class="btn btn-primary">Create account</button>
+        </#if>
+
+        <#if !isRegisterForm>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </#if>
+
     </form>
 </#macro>
 

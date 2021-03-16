@@ -4,7 +4,9 @@
 <@c.page>
     <h3>Login Page</h3>
 
-    <@l.new_login "/login" "Sign In"/>
+    ${message?ifExists}
+
+    <@l.new_login "/login" false/>
 
     <a href="/registration" class="btn mt-1 btn-primary">Registration</a>
 
