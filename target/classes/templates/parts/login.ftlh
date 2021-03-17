@@ -63,7 +63,7 @@
                 </#if>
             </div>
 
-            <button type="submit" class="btn btn-primary">Create account</button>
+            <button type="submit" class="btn btn-primary mb-5">Create account</button>
         </#if>
 
         <#if !isRegisterForm>
