@@ -18,7 +18,7 @@
 
     <@l.login "/login" false/>
 
-    <a href="/registration" class="btn mt-1 btn-primary">Registration</a>
+    <a href="/registration" class="btn mt-1 mb-5 btn-primary">Registration</a>
 
 <#--    <a href="/registration">Registration</a>-->
 </@c.page>
