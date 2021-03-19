@@ -55,7 +55,7 @@
         <#if isRegisterForm>
 
             <div class="mt-4 mb-4">
-                <div class="g-recaptcha" data-sitekey="6Lc5CIMaAAAAAOF2VjxfRivcUuH9mr7h2TTla_BH"></div>
+                <div class="g-recaptcha" data-sitekey="6LefAoYaAAAAAAVYBRQwFUekesHAmtXjXqEuoqBd"></div>
                 <#if captchaError??>
                     <div class="alert alert-danger" role="alert">
                         ${captchaError}

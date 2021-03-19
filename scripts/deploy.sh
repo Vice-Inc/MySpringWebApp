@@ -2,7 +2,7 @@
 
 mvn clean
 
-mnv package
+mvn package
 
 echo 'Copy files..'
 
