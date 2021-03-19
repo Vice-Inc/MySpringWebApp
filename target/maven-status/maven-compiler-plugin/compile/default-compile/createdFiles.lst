@@ -1,0 +1,17 @@
+org\vice\spring\domain\Message.class
+org\vice\spring\repository\MessageRepository.class
+org\vice\spring\domain\User.class
+org\vice\spring\config\MvcConfig.class
+org\vice\spring\controller\ControllerUtils.class
+org\vice\spring\ServingWebContentApplication.class
+org\vice\spring\controller\RegistrationController.class
+org\vice\spring\config\MailConfig.class
+org\vice\spring\controller\UserController.class
+org\vice\spring\service\UserService.class
+org\vice\spring\domain\Role.class
+org\vice\spring\service\MailService.class
+org\vice\spring\controller\MainController.class
+org\vice\spring\domain\dto\recaptchaResponseDto.class
+org\vice\spring\repository\UserRepository.class
+org\vice\spring\config\EncryptionConfig.class
+org\vice\spring\config\WebSecurityConfig.class

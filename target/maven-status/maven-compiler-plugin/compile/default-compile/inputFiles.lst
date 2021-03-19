@@ -1,0 +1,17 @@
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\ServingWebContentApplication.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\repository\UserRepository.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\domain\dto\recaptchaResponseDto.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\repository\MessageRepository.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\config\MvcConfig.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\config\MailConfig.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\controller\RegistrationController.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\service\MailService.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\config\EncryptionConfig.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\controller\MainController.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\controller\UserController.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\domain\User.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\service\UserService.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\config\WebSecurityConfig.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\domain\Role.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\domain\Message.java
+C:\Users\Xiaomi\Documents\Java\MySpringWebApp\src\main\java\org\vice\spring\controller\ControllerUtils.java

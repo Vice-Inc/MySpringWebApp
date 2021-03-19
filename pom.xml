@@ -102,9 +102,18 @@
             <version>2.3.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>2.0.3.RELEASE</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -113,7 +122,9 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -122,7 +133,34 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.3.RELEASE</version>
+                <configuration>
+                    <mainClass>org.vice.spring.ServingWebContentApplication</mainClass>
+                </configuration>
+            </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-jar-plugin</artifactId>-->
+<!--&lt;!&ndash;                <version>3.6.3</version>&ndash;&gt;-->
+<!--                <configuration>-->
+<!--                    <archive>-->
+<!--                        <manifest>-->
+<!--                            &lt;!&ndash; give full qualified name of your main class&ndash;&gt;-->
+<!--                            <mainClass>org.vice.spring.ServingWebContentApplication</mainClass>-->
+<!--                        </manifest>-->
+<!--                    </archive>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+
+
         </plugins>
+
     </build>
 
 </project>
